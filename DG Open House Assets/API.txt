@@ -1,0 +1,58 @@
+krystinacuesta@danielgale.com
+Password1
+
+New:
+
+Web services are installed on danielgale.ecaptureinc.com
+Install folder: /home/kelloggsx/danielgale/
+WS endpoints: /home/kelloggsx/danielgale/src/routes.php
+
+Samples:
+
+LOGIN:
+curl -v -d ldapuser=USER@danielgale.com -d ldappassword=PASSWD http://danielgale.ecaptureinc.com/openhouse/rest/session/login/
+
+Get All DanielGale Properties
+curl -v -H 'X-Authorization: Token c3c07c5a2f898764fac1aa05' http://danielgale.ecaptureinc.com/openhouse/rest/property/
+
+Get modified DanielGale properties
+curl -v -H 'X-Authorization: Token 07082392968a2e7945502a61' http://danielgale.ecaptureinc.com/openhouse/rest/property/?modified_after=2016-03-03T13%3A24%3A57
+
+Get All the Agent offices:
+curl -v -H 'X-Authorization: Token 07082392968a2e7945502a61' http://danielgale.ecaptureinc.com/openhouse/rest/agent_office/
+
+
+
+
+
+
+
+
+Old:
+
+Login Api:
+
+https://dgapi.danielgale.com/api/ohlogin.php?ldapuser=krystinacuesta@danielgale.com&ldappassword=Password1
+
+Receives username and password from the ldap.
+
+if the credentials are correct returns the info for the user: 
+among all data there is the token that is generated with security purposes.(login_token)
+
+Validate Token:
+
+https://dgapi.danielgale.com/api/ohvalidatetoken.php?ldapuser=krystinacuesta@danielgale.com&token=7fbc96349c4299a6c0172a0b
+
+receives the email/username and the token received in the login return 500 if failed 200 if correct
+
+Get Active Listings:
+
+https://dgapi.danielgale.com/api/ohmylistingsactive.php?ldapuser=krystinacuesta@danielgale.com&token=7fbc96349c4299a6c0172a0b
+
+receives email and token, return a json array with the info of the active properties.
+
+Get Inactive Listings:
+
+https://dgapi.danielgale.com/api/ohmylistingsactive.php?ldapuser=krystinacuesta@danielgale.com&token=7fbc96349c4299a6c0172a0b
+
+receives email and token, return a json array with the info of the active properties.

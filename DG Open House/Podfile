@@ -1,0 +1,17 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '8.0'
+# Uncomment this line if you're using Swift
+# use_frameworks!
+
+target 'DG Open House' do
+
+pod 'SVProgressHUD'
+pod 'AFNetworking', '~> 2.6.3'
+pod 'JSONModel'
+pod 'CocoaLumberjack', '~> 2.0.1'
+pod 'IQKeyboardManager'
+pod 'Fabric'
+pod 'Crashlytics'
+pod 'Realm'
+
+end
